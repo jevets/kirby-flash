@@ -32,36 +32,34 @@ Then run `composer install` or `composer update`.
 ## Usage
 
 ```php
-use Jevets\Kirby\Flash;
+// Set data
+flash('messages.success', ['Thanks for your feedback!']);
+flash('messages.errors', ['Email is a required field']);
+flash('username', 'jimihendrix');
 
-$flash = new Flash;
-
-$flash->set($key, $value);
+// Get data
+$success_messages = flash('messages.success');
+$username = flash('username');
+echo flash('username'); // prints "jimihendrix"
 ```
 
 ## Examples
 
-A. If you have a variable set up:
-
 ```php
-// Save a success message
-$flash->set('messages.success', ['Thank you for the great feedback!']);
+flash('messages.errors', ['Email is required.']);
+flash('messages.errors', ['Password is required.']);
+
+// or just
+flash('messages.errors', [
+    'Email is required',
+    'Password is required',
+]);
 ```
 
-B. Use the singleton directly:
-
 ```php
-// Save a success message
-use Jevets\Kirby\Flash;
-Flash::set('messages.success', ['Thank you for the great feedback!']);
-```
-
-Then in a snippet or template:
-
-```php
-<?php if (count($flash->get('messages.success')) > 0): ?>
-<div class="alert alert-success">
-    <?php foreach ($flash->get('messages.success') as $message): ?>
+<?php if (count(flash('messages.errors')) > 0): ?>
+<div class="alert alert-error">
+    <?php foreach (flash('messages.errors') as $message): ?>
         <div><?= html($message) ?></div>
     <?php endforeach ?>
 </div>
