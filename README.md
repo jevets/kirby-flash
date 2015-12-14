@@ -55,14 +55,12 @@ $username = flash('username');
 ## Examples
 
 ```php
-flash('messages.errors', ['Email is required.']);
-flash('messages.errors', ['Password is required.']);
-
-// or just
 flash('messages.errors', [
     'Email is required',
     'Password is required',
 ]);
+
+flash('messages.errors'); // Array( 0 => 'Email is required', 1 => 'Password is required' )
 ```
 
 ```php
