@@ -45,7 +45,7 @@ $flash->set($key, $value);
 // Save a success message
 $flash->set('messages.success', ['Thank you for the great feedback!']);
 ```
-```php
+```phtml
 // some template file or snippet
 <?php if (count($flash->get('messages.success')) > 0): ?>
 <div class="alert alert-success">

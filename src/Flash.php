@@ -86,7 +86,11 @@ class Flash
      */
     public static function set($key, $value)
     {
-        static::$data[$key] = $value;
+        if (!isset($data[$key]))
+            static::$data[$key] = $value;
+
+        if (isset($data[$key]) && is_array($value))
+            static::$data[$key][] = $value;
 
         Session::set(self::sessionKey(), static::$data);
     }
