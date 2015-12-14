@@ -46,12 +46,16 @@ Then run `composer install` or `composer update`.
 ## Usage
 
 ```php
-// Set data
+# Set data
+flash('key', 'value');
+
 flash('messages.success', ['Thanks for your feedback!']);
 flash('messages.errors', ['Email is a required field']);
 flash('username', 'jimihendrix');
 
-// Get data
+# Get data
+$value = flash('key');
+
 $success_messages = flash('messages.success'); // Array( 0 => 'Thanks for your feedback!' )
 $username = flash('username'); // "jimihendrix"
 ```
