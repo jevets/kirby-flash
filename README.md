@@ -46,18 +46,12 @@ $flash->set($key, $value);
 $flash->set('messages.success', ['Thank you for the great feedback!']);
 ```
 ```php
-// site/templates/header.php
-
-<!-- ... -->
-<body>
-  <!-- ... -->
-  <?php if (count($flash->get('messages.success')) > 0): ?>
-    <div class="alert alert-success">
-        <?php foreach ($flash->get('messages.success') as $message): ?>
-            <div><?= html($message) ?></div>
-        <?php endforeach ?>
-    </div>
-  <?php endif ?>
-</body>
-<!-- ... -->
+// some template file or snippet
+<?php if (count($flash->get('messages.success')) > 0): ?>
+<div class="alert alert-success">
+    <?php foreach ($flash->get('messages.success') as $message): ?>
+        <div><?= html($message) ?></div>
+    <?php endforeach ?>
+</div>
+<?php endif ?>
 ```
