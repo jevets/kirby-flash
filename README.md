@@ -108,9 +108,7 @@ flash('my_other_key', 'Some Other Value');
 flash('my_other_key'); // "Some Other Value"
 ```
 
-## Arrays
-
-You may store any kind of data you want in the session. As another example, you could store multiple form validation error messages.
+You may store any kind of data you want in the session. As another example, you could store multiple form validation error messages as an array in a single key.
 
 ```php
 flash('messages.errors', ['Email is required.', 'Phone is required.']);
