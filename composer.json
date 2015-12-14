@@ -1,8 +1,16 @@
 {
     "name": "jevets/kirby-flash",
+    "description": "Stores data in the session for the next request. Data is removed after the next page load.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Steve Jamesson",
+            "email": "steve@evendev.com"
+        }
+    ],
     "autoload": {
-        "psr-0": {
-            "Jevets\\Kirby": "src"
+        "psr-4": {
+            "Jevets\\Kirby\\": "src/"
         },
         "files": [
             "src/helpers.php"
