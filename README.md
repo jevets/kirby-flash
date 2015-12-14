@@ -40,7 +40,6 @@ flash('username', 'jimihendrix');
 // Get data
 $success_messages = flash('messages.success');
 $username = flash('username');
-echo flash('username'); // prints "jimihendrix"
 ```
 
 ## Examples

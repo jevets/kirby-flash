@@ -12,7 +12,7 @@ if (!function_exists('flash')):
      */
     function flash($key, $setValue = '')
     {
-        $flash = \Crazy\Flash::getInstance();
+        $flash = \Jevets\Kirby\Flash::getInstance();
 
         if ($setValue) {
             $flash::add($key, $setValue);
