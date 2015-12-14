@@ -4,7 +4,7 @@ Allows you to "flash" data to the session, which will be available via the sessi
 
 Very useful for:
 
-- Saving submitted form data for form validation, specifically for the GET/POST/GET paradigm
+- Saving submitted form data for form validation, specifically for the [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get)
 - Displaying Success or Error messages after a page reload
 
 ## Quick Example
