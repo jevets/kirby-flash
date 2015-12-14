@@ -52,8 +52,8 @@ flash('messages.errors', ['Email is a required field']);
 flash('username', 'jimihendrix');
 
 // Get data
-$success_messages = flash('messages.success');
-$username = flash('username');
+$success_messages = flash('messages.success'); // Array( 0 => 'Thanks for your feedback!' )
+$username = flash('username'); // String "jimihendrix"
 ```
 
 ## Examples
