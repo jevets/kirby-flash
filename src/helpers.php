@@ -1,4 +1,7 @@
 <?php 
+
+use Jevets\Kirby;
+
 if (!function_exists('flash')):
     /**
      * Flash data to the session. Data is only available for
@@ -12,10 +15,10 @@ if (!function_exists('flash')):
      */
     function flash($key, $setValue = '')
     {
-        $flash = \Jevets\Kirby\Flash::getInstance();
+        $flash = Flash::getInstance();
 
         if ($setValue) {
-            $flash::add($key, $setValue);
+            $flash::set($key, $setValue);
             return $setValue;
         } else {
             return $flash::get($key);

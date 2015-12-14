@@ -61,7 +61,7 @@ class Flash
      *
      * @return string
      */
-    public function sessionKey()
+    public static function sessionKey()
     {
         return static::$session_key;
     }
@@ -72,7 +72,7 @@ class Flash
      * @param string
      * @return void
      */
-    public function setSessionKey($session_key)
+    public static function setSessionKey($session_key)
     {
         static::$session_key = $session_key;
     }
