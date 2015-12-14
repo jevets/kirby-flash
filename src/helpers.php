@@ -1,6 +1,6 @@
 <?php 
 
-use Jevets\Kirby;
+use Jevets\Kirby\Flash;
 
 if (!function_exists('flash')):
     /**
