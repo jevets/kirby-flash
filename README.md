@@ -89,6 +89,8 @@ Jevets\Kirby\Flash::sessionKey();
 
 This class loads a global helper function: `flash($key, $value = '')`.
 
+The `flash()` function is only defined if it doesn't already exist, so you could define your own `flash()` function if necessary. Most of the time, you'll probably just use `flash()` in your application.
+
 When **called with one parameter**, the value is returned. If the key doesn't exist, then you'll get back an empty string.
 
 ```php
@@ -101,6 +103,17 @@ If `$key` already exists, `$value` will replace the existing `$key`'s value.
 
 ```php
 flash('my_other_key', 'Some Value');
+flash('my_other_key', 'Some Other Value');
 
-flash('my_other_key'); // "Some Value"
+flash('my_other_key'); // "Some Other Value"
+```
+
+## Arrays
+
+You may store any kind of data you want in the session. As another example, you could store multiple form validation error messages.
+
+```php
+flash('messages.errors', ['Email is required.', 'Phone is required.']);
+
+flash('messages.errors'); // Array( 0 => 'Email is required.', 1 => 'Phone is required.' )
 ```
