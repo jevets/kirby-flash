@@ -48,7 +48,7 @@ $flash->set('messages.success', ['Thank you for the great feedback!']);
 
 Then in a snippet or template:
 
-```phtml
+```php
 <?php if (count($flash->get('messages.success')) > 0): ?>
 <div class="alert alert-success">
     <?php foreach ($flash->get('messages.success') as $message): ?>
