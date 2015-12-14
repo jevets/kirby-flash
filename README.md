@@ -11,7 +11,11 @@ Very useful for:
 
 ```php
 <?php flash('thanks_message', 'Thanks for contact us') ?>
+```
 
+Elsewhere...
+
+```php
 <?php if (flash('thanks_message')): ?>
     <?php echo flash('thanks_message') ?>
 <?php endif ?>
