@@ -10,7 +10,6 @@ Very useful for:
 ## Quick Example
 
 ```php
-<?php
 flash('thanks_message', 'Thanks for contact us');
 ```
 
