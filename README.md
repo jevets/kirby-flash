@@ -41,9 +41,19 @@ $flash->set($key, $value);
 
 ## Examples
 
+A. If you have a variable set up:
+
 ```php
 // Save a success message
 $flash->set('messages.success', ['Thank you for the great feedback!']);
+```
+
+B. Use the singleton directly:
+
+```php
+// Save a success message
+use Jevets\Kirby\Flash;
+Flash::set('messages.success', ['Thank you for the great feedback!']);
 ```
 
 Then in a snippet or template:
