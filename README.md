@@ -73,26 +73,6 @@ flash('messages.errors'); // Array( 0 => 'Email is required', 1 => 'Password is 
 <?php endif ?>
 ```
 
-## Session Key
-
-By default Flash stores data under the session key `_flash`.
-
-So you *could* access flash data like `s::get('_flash')` if you wanted to.
-
-### Changing the Session Key
-
-Use the static method to change the flash key. (You should probably do this early on in your app, probably in `index.php` or `site.php`.)
-
-```php
-Jevets\Kirby\Flash::setSessionKey('_my_custom_key');
-```
-
-### Getting the Session Key
-
-```php
-Jevets\Kirby\Flash::sessionKey();
-```
-
 ## `flash()` Helper Function
 
 This class loads a global helper function: `flash($key, $value = '')`.
@@ -123,6 +103,27 @@ flash('messages.errors', ['Email is required.', 'Phone is required.']);
 
 flash('messages.errors'); // Array( 0 => 'Email is required.', 1 => 'Phone is required.' )
 ```
+
+## Session Key
+
+By default Flash stores data under the session key `_flash`.
+
+So you *could* access flash data like `s::get('_flash')` if you wanted to.
+
+### Changing the Session Key
+
+Use the static method to change the flash key. (You should probably do this early on in your app, probably in `index.php` or `site.php`.)
+
+```php
+Jevets\Kirby\Flash::setSessionKey('_my_custom_key');
+```
+
+### Getting the Session Key
+
+```php
+Jevets\Kirby\Flash::sessionKey();
+```
+
 
 ## Contributing
 
