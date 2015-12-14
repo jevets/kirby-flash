@@ -64,3 +64,43 @@ flash('messages.errors', [
 </div>
 <?php endif ?>
 ```
+
+## Session Key
+
+By default Flash stores data under the session key `_flash`.
+
+So you *could* access flash data like `s::get('_flash')` if you wanted to.
+
+### Changing the Session Key
+
+Use the static method to change the flash key. (You should probably do this early on in your app, probably in `index.php` or `site.php`.)
+
+```php
+Jevets\Kirby\Flash::setSessionKey('_my_custom_key');
+```
+
+### Getting the Session Key
+
+```php
+Jevets\Kirby\Flash::sessionKey();
+```
+
+## `flash()` Helper Function
+
+This class loads a global helper function: `flash($key, $value = '')`.
+
+When **called with one parameter**, the value is returned. If the key doesn't exist, then you'll get back an empty string.
+
+```php
+flash('my_key');
+```
+
+When **called with two parameters**, the `$value` is set for the `$key`. 
+
+If `$key` already exists, `$value` will replace the existing `$key`'s value.
+
+```php
+flash('my_other_key', 'Some Value');
+
+flash('my_other_key'); // "Some Value"
+```
