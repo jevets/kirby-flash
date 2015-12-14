@@ -53,7 +53,7 @@ flash('username', 'jimihendrix');
 
 // Get data
 $success_messages = flash('messages.success'); // Array( 0 => 'Thanks for your feedback!' )
-$username = flash('username'); // String "jimihendrix"
+$username = flash('username'); // "jimihendrix"
 ```
 
 ## Examples
