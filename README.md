@@ -45,15 +45,17 @@ Then run `composer install` or `composer update`.
 
 ## Usage
 
+### Set data
 ```php
-# Set data
 flash('key', 'value');
 
 flash('messages.success', ['Thanks for your feedback!']);
 flash('messages.errors', ['Email is a required field']);
 flash('username', 'jimihendrix');
+```
 
-# Get data
+### Get data
+```php
 $value = flash('key');
 
 $success_messages = flash('messages.success'); // Array( 0 => 'Thanks for your feedback!' )
