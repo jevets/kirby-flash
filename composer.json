@@ -1,0 +1,8 @@
+{
+    "name": "jevets/kirby-flash",
+    "autoload": {
+        "psr-0": {
+            "Jevets\\Kirby": "src"
+        }
+    }
+}
