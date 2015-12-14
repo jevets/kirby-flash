@@ -10,7 +10,7 @@ Very useful for:
 ## Quick Example
 
 ```php
-flash('thanks_message', 'Thanks for contact us');
+flash('thanks_message', 'Thank you for contacting us!');
 ```
 
 Elsewhere...
@@ -32,12 +32,12 @@ Install with composer:
     "require": {
         "jevets/kirby-flash": "dev-master"
     },
-    "repositories": {
+    "repositories": [
         {
             "type": "git",
             "url": "https://github.com/jevets/kirby-flash.git"
         }
-    }
+    ]
 }
 ```
 
