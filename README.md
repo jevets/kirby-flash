@@ -10,15 +10,15 @@ Very useful for:
 ## Quick Example
 
 ```php
-<?php flash('thanks_message', 'Thanks for contact us') ?>
+flash('thanks_message', 'Thanks for contact us');
 ```
 
 Elsewhere...
 
 ```php
-<?php if (flash('thanks_message')): ?>
+&lt;?php if (flash('thanks_message')): ?>
     <?php echo flash('thanks_message') ?>
-<?php endif ?>
+&lt;?php endif ?>
 ```
 
 ## Installation
