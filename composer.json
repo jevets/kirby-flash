@@ -3,6 +3,9 @@
     "autoload": {
         "psr-0": {
             "Jevets\\Kirby": "src"
-        }
+        },
+        "files": [
+            "helpers.php"
+        ]
     }
 }
