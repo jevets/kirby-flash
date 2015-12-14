@@ -11,7 +11,7 @@ class Flash
      *
      * @var constant
      */
-    const SESSION_KEY = '_flash';
+    private static $session_key;
 
     /**
      * The singleton instance
@@ -47,11 +47,34 @@ class Flash
      *
      * @return void
      */
-    private function __construct()
+    private function __construct($session_key = '_flash')
     {
-        static::$data = Session::get(self::SESSION_KEY, []);
+        self::setSessionKey($session_key);
 
-        Session::remove(self::SESSION_KEY);
+        static::$data = Session::get(self::sessionKey(), []);
+
+        Session::remove(self::sessionKey());
+    }
+
+    /**
+     * Get the session key
+     *
+     * @return string
+     */
+    public function sessionKey()
+    {
+        return static::$session_key;
+    }
+
+    /**
+     * Set the session key
+     *
+     * @param string
+     * @return void
+     */
+    public function setSessionKey($session_key)
+    {
+        static::$session_key = $session_key;
     }
 
     /**
@@ -65,7 +88,7 @@ class Flash
     {
         static::$data[$key] = $value;
 
-        Session::set(self::SESSION_KEY, static::$data);
+        Session::set(self::sessionKey(), static::$data);
     }
 
     /**

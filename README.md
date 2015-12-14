@@ -1,4 +1,4 @@
-# kirby-flash
+# Kirby Flash
 
 Allows you to "flash" data to the session, which will be available via the session on the next page load, after which the data is removed from the session.
 
@@ -25,4 +25,39 @@ Install with composer:
         }
     }
 }
+```
+
+Then run `composer install` or `composer update`.
+
+## Usage
+
+```php
+use Jevets\Kirby\Flash;
+
+$flash = new Flash;
+
+$flash->set($key, $value);
+```
+
+## Examples
+
+```php
+// Save a success message
+$flash->set('messages.success', ['Thank you for the great feedback!']);
+```
+```php
+// site/templates/header.php
+
+<!-- ... -->
+<body>
+  <!-- ... -->
+  <?php if (count($flash->get('messages.success')) > 0): ?>
+    <div class="alert alert-success">
+        <?php foreach ($flash->get('messages.success') as $message): ?>
+            <div><?= html($message) ?></div>
+        <?php endforeach ?>
+    </div>
+  <?php endif ?>
+</body>
+<!-- ... -->
 ```
