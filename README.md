@@ -2,10 +2,20 @@
 
 Allows you to "flash" data to the session, which will be available via the session on the next page load, after which the data is removed from the session.
 
-This is very useful for:
+Very useful for:
 
 - Saving submitted form data for form validation, specifically for the GET/POST/GET paradigm
 - Displaying Success or Error messages after a page reload
+
+## Quick Example
+
+```php
+<?php flash('thanks_message', 'Thanks for contact us') ?>
+
+<?php if (flash('thanks_message')): ?>
+    <?php echo flash('thanks_message') ?>
+<?php endif ?>
+```
 
 ## Installation
 
@@ -115,3 +125,11 @@ flash('messages.errors', ['Email is required.', 'Phone is required.']);
 
 flash('messages.errors'); // Array( 0 => 'Email is required.', 1 => 'Phone is required.' )
 ```
+
+## Contributing
+
+Feel free to send a pull request!
+
+## Issues/Bugs
+
+Please use the [GitHub issue tracker](https://github.com/jevets/kirby-flash/issues).
